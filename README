@@ -1,4 +1,4 @@
-Off Canvas Hybrid is a responsive design pattern that pushes content off and on screen according to conditions defined in css media queries and user interaction. I call this pattern a "hybrid" because it functions differently for mouse and touch input. The mouse driven experience moves content panels on the same plane. The touch driven experience stacks content like a deck of cards. Users swipe the top layer back and forth to reveal content underneath.
+Off Canvas Hybrid is a responsive design pattern that pushes content off and on screen according to conditions defined in css media queries. I call this pattern a "hybrid" because it functions differently for mouse and touch input. The mouse driven experience moves content panels on the same plane. The touch driven experience stacks content like a deck of cards. Users swipe the top layer back and forth to reveal content underneath.
 
 The JavaScript in this demo only drives the touch experience. The desktop experience is completely CSS driven. The JavaScript included in this file licensed via The MIT License below and is free to use. 
 
