@@ -1,9 +1,10 @@
-/*global Snapper, document, $, console, opera, LotLib */
+/*global  */
 /**
 	@module OffCanvas
 	@version 1.0
 	@author Vince Allen
 	@date 04-03-2012
+	@requires jQuery, Modernizr, PVector
 */
 
 var OffCanvas = {};
