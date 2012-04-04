@@ -1,0 +1,113 @@
+.body-touch {
+	background: 								#ccc;
+	overflow: 									hidden;
+}
+
+.container-page-touch {
+	position:									static; /* let containers position relative to the body */
+	width:										100%;
+	margin:										0;
+}
+
+.container-touch {
+	-webkit-transform:  						translateZ(0);	/* speeds up frame rate */
+}
+
+.container-menu-touch {
+	left:										0;
+	width: 										20%;
+	z-index: 									100;
+}
+
+.container-touch { /* do not use transitions on touch devices; js handles all animation */
+	transition: 							none;
+	-moz-transition: 						none;
+	-webkit-transition: 					none;
+	-o-transition:							none;
+	-ms-transition:							none;	
+}
+
+
+/* MEDIA QUERIES -- start */
+
+@media screen and (max-width: 480px) {
+	
+	.container-content {
+		padding-top: 4em;
+	}
+	
+	.navigation {
+		position:								fixed;	
+	}
+	
+	.navigation-bar-touch {
+		display: 								block; /* reveal the nav item */ 
+		position:								fixed;	
+		top: 									0;
+		left: 									0;
+		width: 									100%; /* navigation bar runs edge to edge */
+		z-index:								5; /* navigation bar should sit in between content and menus */
+	}
+	
+	/*	nav contact */	
+	.navigation-contact-touch {
+		display: 								block;		
+	}
+	
+	/*	nav menu */
+	.navigation-menu-touch { 
+		display: 								block; /* reveal the nav item */ 	
+		width: 									88px;	
+		left: 									0; /* match the content container's left position */
+	}
+	
+	/*	container menu */	
+	.container-menu-touch {
+		position:								fixed;
+		background:								#eee;
+		width: 									100%;
+		left: 									0; 
+		z-index:								0;
+	}
+	
+	.container-menu-touch .container-inner {
+		margin-top: 44px;
+		padding-top: 2em;
+	}
+	
+	
+	.container-contact-touch {
+		position:								fixed;
+		background:								#eee;
+		width: 									90%;
+		left: 									0; 
+		padding-left: 							10%;
+		z-index:								0;
+	}
+	
+	.container-contact-touch .container-inner {
+		margin-top: 44px;
+		padding-top: 							2em;
+		padding-left: 							0;
+	}
+	
+	/*	container content */	
+	.container-content-touch {
+		width: 									100%;
+		left: 									0;
+		z-index:								1; /* content should render above the side panels on touch */
+	}
+	
+	#ContainerContent {
+		border: 								none; /* remove the border on content column */
+	}
+
+	.container-touch { /* do not use transitions on touch devices; js handles all animation */
+		transition: 							none;
+		-moz-transition: 						none;
+		-webkit-transition: 					none;
+		-o-transition:							none;
+		-ms-transition:							none;	
+	}
+	
+}

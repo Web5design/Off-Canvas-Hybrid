@@ -1,0 +1,486 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+/* reset */
+html,body,div,span,applet,object,iframe,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,tt,var,b,u,i,center,dl,dt,dd,ol,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}:focus{outline:0;}ins{text-decoration:none;}del{text-decoration:line-through;}table{border-collapse:collapse; border-spacing:0;}
+
+/* */
+
+body {
+	
+}
+
+.container-page {
+	position:									relative;
+	width:										90%;
+	margin:										1em auto;
+	transition: 								.35s;
+	-moz-transition: 							.35s;
+	-webkit-transition: 						.35s;
+	-o-transition:								.35s;
+	-ms-transition:								.35s;
+}
+
+.container {
+	display:									block;
+	position:									absolute;
+	top:										0;
+}
+
+.container-touch {
+	-webkit-transform:  						translateZ(0);	
+}
+
+.container-inner {
+	padding:									1em 1em 0 1em;
+	margin: 0 1em 0 1em;
+}
+
+.container-contact .container-inner {
+	padding-bottom: 1em;
+}
+
+.container-footer-inner {
+	padding:									1em 1em 0 1em;
+}
+
+.container-menu, .container-menu-touch {
+	left:										0;
+	width: 										20%;
+	z-index: 									100;
+	border-radius:								6px 0 0 6px;
+}
+
+.container-menu .container-inner {
+	margin-top: 								44px;
+	padding-top: 								2em;
+}
+
+.container-content {
+	left:										24%;	
+	width: 										55%;
+	background:									#fff;	
+	z-index: 									0;
+	border-radius:								0 6px 0 0;
+	font-size: 									1em;
+	border-left:								1px dotted #ddd;
+	border-right:								1px dotted #ddd;
+}
+
+.container-contact {
+	left:										80%;	
+	width: 										20%;
+	background:									transparent;
+	z-index: 									100;	
+}
+
+.container-contact .container-inner {
+	margin-top: 								0em;
+}
+
+.navigation-bar {
+	display: 									none;
+	z-index:									5;
+}
+
+.navigation-bar table {
+	width:										100%;
+}
+
+.navigation-bar td {
+	padding:									0;
+	height: 									44px;
+}
+
+.navigation-bar-left,
+.navigation-bar-right {
+	width: 										25%;
+}
+
+.navigation-bar-middle {
+	width: 										50%;
+	text-align: 								right;
+}
+
+.navbg-menu {
+	display: 									none;
+	width: 										94px;
+	height: 									44px;
+	border-right: 								1px solid #eee;
+}
+
+.navbg-contact {
+	position: 									absolute;
+	right: 										0;
+	width: 										98px;
+	height: 									44px;
+	border-left: 								1px solid #eee;
+}
+
+.navigation {
+	position:									absolute;
+	top:										0;
+	right: 										1em;		
+	z-index: 									10; /* IMPORTANT: the z-index should be lower than the off canvas containers; allows :hover to trigger on containers */
+	display: 									none;
+	cursor:										pointer;
+	height: 									44px;
+	line-height: 								44px;
+	padding-left: 								20px;
+	color:										#fff;
+}
+
+.container-footer {
+	background:									#fff;
+	font-size: .8em;
+}
+.menu-footer {
+	list-style: 								none;
+	padding: 									0;
+}
+
+.menu-footer li {
+	display: 									inline-block;
+	margin-right: 								1em;
+}
+
+.diagram {
+	max-width: 									100%;
+}
+
+.navigation-bar {
+	background:									#aaa;
+}
+
+
+	
+
+
+/*		TYPE */
+body {
+	font-family: 								"Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	color:										#999;
+}
+
+h1, h2, h3, ul {
+	font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+	margin-top:									0;
+}
+
+h2, h3 {
+	font-style: 								oblique;
+}
+
+h1.title {
+	color:										#777;
+	font-size:									4em;
+	border-bottom: 								1px dotted #badff1;
+	text-shadow:								-1px -1px #badff1;
+}
+
+h2 {
+	font-size:									1.5em;
+}
+
+ul {
+	list-style: 								disc outside none;
+}
+
+ul.menu {
+	list-style: 								none outside none;
+	padding: 									0 0 .75em 0;
+}
+
+p, li {
+	margin-bottom:								1em;
+	line-height:								1.5em;
+}
+
+a {
+	text-decoration: 							none;
+	color: 										#666;
+}
+
+a.selected {
+	color: 										#30ace9;
+}
+
+a:hover {
+	border-bottom: 								1px dotted #aaa;
+}
+a.navigation:hover {
+	border: 									none;
+}
+
+/* MEDIA QUERIES -- start */
+
+@media screen and (max-width: 1000px) { /* 728 + 20: 20px padding on left and right before width collapses to 470px */
+	
+	body {
+		overflow-x:								hidden;
+	}
+	
+	/* page */
+	.container-page {
+		width:									100%; 
+		margin:									0 auto;
+	}
+	
+	/* menu */
+	.container-menu {
+		border-radius:							0;
+		transition: 							.35s;
+		-moz-transition: 						.35s;
+		-webkit-transition: 					.35s;
+		-o-transition:							.35s;
+		-ms-transition:							.35s;
+	}
+	
+	/* content */
+	.container-content {
+		border-radius:							0;
+		width: 									77%;
+		padding-top: 							4em;
+		transition: 							.35s;
+		-moz-transition: 						.35s;
+		-webkit-transition: 					.35s;
+		-o-transition:							.35s;
+		-ms-transition:							.35s;
+	}
+	
+	/*	contact */	
+	.container-contact {
+		background_:								#badff1;
+		width:									70%;
+		left: 									100%;
+		transition: 							.35s;
+		-moz-transition: 						.35s;
+		-webkit-transition: 					.35s;
+		-o-transition:							.35s;
+		-ms-transition:							.35s;
+	}
+	
+	.container-contact-touch { 
+		background_:								#badff1;
+	}
+	
+	.container-contact .container-inner,
+	.container-contact-touch .container-inner {
+		background_:								#976f3f;
+		margin-top: 							4em;
+	}
+	
+	.container-contact .container-inner h2,
+	.container-contact-touch .container-inner h2 {
+		color_: #664927;
+	}
+	
+	.navigation-bar {
+		position: absolute;
+		top: 0;
+		left: 24%;
+		width: 77%;
+		display: 								block;
+		transition: 							top .35s;
+		-moz-transition: 						top .35s;
+		-webkit-transition: 					top .35s;
+		-o-transition:							top .35s;
+		-ms-transition:							top .35s;
+	}
+
+	.container-touch {
+		transition: 							none;
+		-moz-transition: 						none;
+		-webkit-transition: 					none;
+		-o-transition:							none;
+		-ms-transition:							none;	
+	}
+	
+	
+	/* nav contact */
+	.navigation-contact, .navigation-contact-touch {
+		display: 								block; /* reveal the nav item */ 		
+	}
+	
+	.navigation-contact:visited {
+		color: 									#00FF00;
+	}	
+	
+	.navigation-contact:hover {
+		cursor: 								pointer;
+	}
+	
+	.navigation-contact:active {
+		color: 									#eee;
+	}
+	
+	.container-contact:hover ~ .container-menu { /* mouseover on container contact keeps container menu off screen */
+		left: 									-70%;
+	}
+	
+	.navigation-contact:active ~ .container-menu { /* mousedown on contact nav moves container menu off screen to the left */
+		left: 									-70%; 
+	}
+	
+	.navigation-contact:active ~ .navigation-bar { /* mousedown on contact nav clears navigation bar background */
+		top: -100px;
+	}
+	
+	.container-contact:hover ~ .container-content, /* hovering over container-menu keeps container-content left */
+	.navigation-contact:active ~ .container-content { /* clicking on nav bar slides container-content left */
+		left: 									-37%;
+	}
+	
+	.navigation-contact:active ~ .container-contact, /* clicking nav bar slides nav bar left */
+	.container-contact:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav bar keeps nav out of the way and allows :hover to triggers */
+		width_:									60%;
+		left: 									40%; /* move on screen */
+	}
+	
+	.container-contact:hover ~ .navigation-bar { /* mousedown on contact nav clears navigation bar background */
+		top: 									-100px;
+	}
+	
+	/* container inner */
+	.container-contact .container-inner {
+		display: 								none;
+	}
+	
+	.navigation-contact:active ~ .container-contact .container-inner,
+	.container-contact:hover .container-inner {
+		display: 								block;
+	}
+	
+}	
+
+@media screen and (max-width: 480px) { /* we don't need padding on the breakpoint here */
+	
+	body {
+		overflow-x:								hidden;
+	}
+	
+	.container-page {
+		left:									0%;
+		overflow-x:								hidden;
+	}
+	
+	.navigation-bar {
+		top: 									0;
+		left: 									0%;
+		width: 									100%;
+	}
+	
+	.navbg-menu {
+		display: 								block;
+	}
+	
+	/*	nav menu */
+	.navigation-menu, .navigation-menu-touch { 
+		display: 								block; /* reveal the nav item */ 	
+		width: 									88px;	
+		left: 									0; /* match the content container's left position */
+	}
+	
+	.navigation-menu:hover {
+		cursor: pointer;
+	}
+	
+	.navigation-menu:active {
+		color: 									#eee;
+	}
+	
+	.navigation-menu:active ~ .container-content, /* clicking on nav bar slides container-content right */
+	.container-menu:hover ~ .container-content { /* hovering over container-menu keeps container-content right */
+		width_: 									100%;
+		left: 									70%;
+	}
+	
+	.navigation-menu:active ~ .container-menu, /* clicking nav bar slides nav bar right */
+	.container-menu:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav bar keeps nav out of the way and allows :hover to triggers */
+		left: 									0; /* move on screen */
+	}
+	
+	/*	container menu */
+	.container-menu {
+		width: 									70%; /* set desired width when on screen */
+		left: 									-70%; /* set left off screen */
+	}
+	
+	.container-menu-touch {
+		width: 									100%;
+		left: 									0; 
+		z-index:								0;
+	}
+
+	.container-contact-touch {
+		width: 									100%;
+		left: 									0; 
+		padding-left: 15%;
+		z-index:								0;
+	}
+	
+	/* nav contact */
+	.navigation-contact:hover {
+		cursor: pointer;
+	}
+	
+	.navigation-contact:active {
+		color: 									#eee;
+	}
+	
+	.navigation-contact:active ~ .container-content, /* clicking on menu nav slides container-content left */
+	.container-contact:hover ~ .container-content { /* hovering over container-menu keeps container-content left */
+		width: 									100%;
+		left: 									-70%;
+	}
+	
+	.navigation-contact:active ~ .container-contact, /* clicking contact nav slides container conteact left */
+	.container-contact:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav item keeps nav out of the way and allows :hover to trigger */
+		left: 									30%; /* move on screen */
+		width:									70%;		
+	}
+	
+	.navigation-contact:active ~ .container-menu, /* keep menu off screen to the left */
+	.container-contact:hover ~ .container-menu {
+		left: 									-70%;
+	}
+	
+	/* navigation bar */
+	.navigation-contact:active ~ .navigation-bar { /* mousedown on contact nav clears navigation bar background */
+		top: 0;
+	}
+	
+	.container-contact:hover ~ .navigation-bar { /* mousedown on contact nav clears navigation bar background */
+		top: 0;
+	}
+	
+	
+	/* content */
+	.container-content {
+		width: 									100%;
+		left: 									0;
+	}
+	
+	.container-content-touch {
+		width: 									100%;
+		left: 									0;
+		z-index:								1; /* content should render above the side panels on touch */
+	}
+	
+	/* footer */
+	.menu-footer li {
+		display: 								block; /* footer items should vertically stack */
+	}
+
+
+	.container-touch {
+		transition: 							none;
+		-moz-transition: 						none;
+		-webkit-transition: 					none;
+		-o-transition:							none;
+		-ms-transition:							none;	
+	}
+	
+}
+
+
+

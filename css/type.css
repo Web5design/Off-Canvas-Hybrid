@@ -1,0 +1,55 @@
+/*		TYPE */
+body {
+	font-family: 								"Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	color:										#999;
+}
+
+h1, h2, h3, ul {
+	font-family: 								Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+	margin-top:									0;
+}
+
+h2, h3 {
+	font-style: 								oblique;
+}
+
+h1.title {
+	color:										#777;
+	font-size:									4em;
+	border-bottom: 								1px dotted #badff1;
+	text-shadow:								-1px -1px #badff1;
+}
+
+h2 {
+	font-size:									1.5em;
+}
+
+ul {
+	list-style: 								disc outside none;
+}
+
+ul.menu {
+	list-style: 								none outside none;
+	padding: 									0 0 .75em 0;
+}
+
+p, li {
+	margin-bottom:								1em;
+	line-height:								1.5em;
+}
+
+a {
+	text-decoration: 							none;
+	color: 										#666;
+}
+
+a.selected {
+	color: 										#30ace9;
+}
+
+a:hover {
+	border-bottom: 								1px dotted #aaa;
+}
+a.navigation:hover {
+	border: 									none;
+}

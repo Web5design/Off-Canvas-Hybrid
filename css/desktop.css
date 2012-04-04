@@ -1,0 +1,324 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+/* reset */
+html,body,div,span,applet,object,iframe,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,tt,var,b,u,i,center,dl,dt,dd,ol,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}:focus{outline:0;}ins{text-decoration:none;}del{text-decoration:line-through;}table{border-collapse:collapse; border-spacing:0;}
+
+/* */
+
+.container-page {
+	position:									relative;
+	width:										90%;
+	margin:										1em auto;
+	transition: 								.35s;
+	-moz-transition: 							.35s;
+	-webkit-transition: 						.35s;
+	-o-transition:								.35s;
+	-ms-transition:								.35s;
+}
+
+/*		PANELS */
+
+.container { /* all panels are absolutely positioned at the top */
+	display:									block;
+	position:									absolute;
+	top:										0;
+}
+
+.container-inner {
+	padding:									1em 1em 0 1em;
+	margin: 									0 1em 0 1em;
+}
+
+.container-contact .container-inner {
+	padding-bottom: 							1em;
+}
+
+.container-menu {
+	left:										0;
+	width: 										20%;
+	z-index: 									100;
+}
+
+.container-menu .container-inner {
+	margin-top: 								44px;
+	padding-top: 								2em; /* add extra padding to menu */
+}
+
+.container-content {
+	left:										24%;	
+	width: 										55%;
+	background:									#fff;	
+	z-index: 									0; /* content should sit at the bottom of the z-index */
+	border-left:								1px dotted #ddd; /* the dotted lines on either side of the content column */
+	border-right:								1px dotted #ddd;
+}
+
+.container-contact {
+	left:										80%;	
+	width: 										20%;
+	z-index: 									100; /* contact should sit higher in the z-order than content */
+}
+
+.container-contact .container-inner {
+	margin-top: 								0; /* contact has no top margin before first breakpoint */
+}
+
+/*		NAVIGATION BAR */
+
+.navigation-bar {
+	display: 									none;
+	z-index:									5; /* navigation bar should sit in between content and menus */
+}
+
+.navigation-bar table {
+	width:										100%;
+	height: 									44px;
+}
+
+.navigation-bar td {
+	padding:									0;
+}
+
+.navigation-bar-left,
+.navigation-bar-right {
+	width: 										25%;
+}
+
+.navigation-bar-middle {
+	width: 										50%;
+	text-align: 								right;
+}
+
+.navbg-menu {
+	display: 									none;
+	width: 										0; /* set width at lowest breakpoint */
+	height: 									44px;
+	border-right: 								1px solid #eee;
+}
+
+.navbg-contact {
+	position: 									absolute;
+	top: 										0;
+	right: 										0;
+	width: 										90px;
+	height: 									44px;
+	border-left: 								1px solid #eee;
+}
+
+.navigation {
+	position:									absolute;
+	top:										0;
+	right: 										1em;		
+	z-index: 									10; /* IMPORTANT: the z-index should be lower than the off canvas containers; allows :hover to trigger on containers */
+	display: 									none;
+	cursor:										pointer;
+	height: 									44px;
+	line-height: 								44px;
+	padding-left: 								20px;
+	color:										#fff;
+}
+
+
+/*		FOOTER */
+
+.container-footer {
+	margin-top:									4em;
+	border-top: 								1px dotted #ddd;
+}
+
+.container-footer-inner {
+	padding:									1em 1em 0 1em;
+}
+
+/* 		MENU */
+
+.menu-footer {
+	list-style: 								none;
+	padding: 									0;
+}
+
+.menu-footer li {
+	display: 									inline-block;
+	margin-right: 								1em;
+}
+
+
+
+/* MEDIA QUERIES -- start */
+
+@media screen and (max-width: 1000px) {
+	
+	body {
+		overflow-x:								hidden; /* prevents horizontal scroll bars from appearing */
+	}
+	
+	/* page */
+	.container-page {
+		width:									100%; /* content should run edge to edge */
+		margin:									0;
+	}
+	
+	.container { /* need to re-assign transitions at the breakpoint */
+		transition: 							.35s;
+		-moz-transition: 						.35s;
+		-webkit-transition: 					.35s;
+		-o-transition:							.35s;
+		-ms-transition:							.35s;
+	}
+	
+	/* content */
+	.container-content {
+		width: 									77%; /* content takes up roughly 2/3 width */
+		padding-top: 							4em;
+	}
+	
+	/*	contact */	
+	.container-contact {
+		width:									60%; /* panel will not expand edge to edge */
+		left: 									100%; /* contact panel is initially off screen */
+	}
+	
+	.container-contact .container-inner {
+		margin-top: 							4em; /* navigation bar appears at this breakpoint; need to push contact content down to make room */
+	}
+	
+	.navigation-bar { /* navigation bar appears at this breakpoint */
+		position: 								absolute; /* like other panels, it is absolutely positioned at the top */
+		top: 									0;
+		left: 									24%;
+		width: 									77%; /* the navigation bar width matches the content panel */
+		display: 								block;
+		transition: 							.35s;
+		-moz-transition: 						.35s;
+		-webkit-transition: 					.35s;
+		-o-transition:							.35s;
+		-ms-transition:							.35s;
+	}
+
+	/* nav contact */
+	.navigation-contact {
+		display: 								block; /* reveal the nav item */ 		
+	}
+	
+	.navigation-contact:hover {
+		cursor: 								pointer; /* change the cursor on hover */
+	}
+	
+	/* the MAGIC starts here with the sibling combinator */
+		
+	.container-contact:hover ~ .container-menu, /* hover on container contact keeps container menu off screen */
+	.navigation-contact:active ~ .container-menu { /* mousedown on contact nav moves container menu off screen to the left */
+		left: 									-70%;
+	}
+	
+	.navigation-contact:active ~ .navigation-bar, /* mousedown on contact nav slides the navigation bar off screen to the top */
+	.container-contact:hover ~ .navigation-bar { /* hover on contact container keeps navigation bar off screen */
+		top: 									-100px;
+	}
+		
+	.container-contact:hover ~ .container-content, /* hovering over container-menu keeps container-content left */
+	.navigation-contact:active ~ .container-content { /* clicking on nav bar slides container-content left */
+		left: 									-37%;
+	}
+	
+	.navigation-contact:active ~ .container-contact, /* clicking nav bar slides nav bar left */
+	.container-contact:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav bar keeps nav out of the way and allows :hover to triggers */
+		left: 									40%; /* move on screen */
+	}
+	
+}	
+
+@media screen and (max-width: 480px) { /* we don't need padding on the breakpoint here */
+	
+	body {
+		overflow-x:								hidden; /* prevents horizontal scroll bars from appearing */
+	}
+	
+	.container-page {
+		width:									100%; /* content should run edge to edge */
+		margin:									0;
+	}
+	
+	.navigation-bar {
+		top: 									0;
+		left: 									0;
+		width: 									100%; /* navigation bar runs edge to edge */
+	}
+	
+	.navbg-menu {
+		display: 								block; /* show the veritcal line for menu anchor */
+		width: 									78px;
+	}
+	
+	.navbg-contact {
+		width: 									82px;
+	}
+	
+	/*	nav menu */
+	.navigation-menu { 
+		display: 								block;
+		width: 									88px;	
+		left: 									0; /* match the content container's left position */
+	}
+	
+	.navigation-menu:hover {
+		cursor: 								pointer; /* change the cursor on hover */
+	}
+	
+	
+	.navigation-menu:active ~ .container-content, /* clicking on nav bar slides container-content right */
+	.container-menu:hover ~ .container-content { /* hovering over container-menu keeps container-content right */
+		left: 									70%;
+	}
+	
+	.navigation-menu:active ~ .container-menu, /* clicking nav bar slides nav bar right */
+	.container-menu:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav bar keeps nav out of the way and allows :hover to triggers */
+		left: 									0; /* move on screen */
+	}
+	
+	/*	container menu */
+	.container-menu {
+		width: 									70%; /* set desired width when on screen */
+		left: 									-70%; /* set left off screen */
+	}
+	
+	
+	/* nav contact */	
+	.navigation-contact:active ~ .container-content, /* clicking on menu nav slides container-content left */
+	.container-contact:hover ~ .container-content { /* hovering over container-menu keeps container-content left */
+		width: 									100%;
+		left: 									-70%;
+	}
+	
+	.navigation-contact:active ~ .container-contact, /* clicking contact nav slides container conteact left */
+	.container-contact:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav item keeps nav out of the way and allows :hover to trigger */
+		left: 									30%; /* move on screen */
+		width:									70%;		
+	}
+	
+	.navigation-contact:active ~ .container-menu, /* keep menu off screen to the left */
+	.container-contact:hover ~ .container-menu {
+		left: 									-70%;
+	}
+	
+	/* navigation bar */
+	.navigation-contact:active ~ .navigation-bar, /* mousedown on contact nav clears navigation bar background */
+	.container-contact:hover ~ .navigation-bar { /* hover on contact nav clears navigation bar background */
+		top: 0;
+	}
+
+	
+	
+	/* content */
+	.container-content {
+		width: 									100%; /* content container should initially run edge to edge */
+		left: 									0;
+	}
+	
+
+	/* footer */
+	.menu-footer li {
+		display: 								block; /* footer items should vertically stack */
+	}
+	
+}

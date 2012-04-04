@@ -1,0 +1,68 @@
+/* IE does not recognize sibling combinator when triggered via :active; changed all :active pseudo-classes to :hover  */
+
+@media screen and (max-width: 1000px) {
+
+	.container-contact:hover ~ .container-menu, /* mouseover on container contact keeps container menu off screen */
+	.navigation-contact:hover ~ .container-menu { /* mousedown on contact nav moves container menu off screen to the left */
+		left: 									-70%;
+	}
+	
+	.navigation-contact:hover ~ .navigation-bar, /* mousedown on contact nav slides the navigation bar off screen to the top */
+	.container-contact:hover ~ .navigation-bar { /* hover on contact container keeps navigation bar off screen */
+		top: 									-100px;
+	}
+		
+	.container-contact:hover ~ .container-content, /* hovering over container-menu keeps container-content left */
+	.navigation-contact:hover ~ .container-content { /* clicking on nav bar slides container-content left */
+		left: 									-37%;
+	}
+	
+	.navigation-contact:hover ~ .container-contact, /* clicking nav bar slides nav bar left */
+	.container-contact:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav bar keeps nav out of the way and allows :hover to triggers */
+		left: 									40%; /* move on screen */
+	}
+		
+}
+
+@media screen and (max-width: 480px) {
+	
+	
+	/*	nav menu */
+	
+	.navigation-menu:hover ~ .container-content, /* clicking on nav bar slides container-content right */
+	.container-menu:hover ~ .container-content { /* hovering over container-menu keeps container-content right */
+		left: 									70%;
+	}
+	
+	.navigation-menu:hover ~ .container-menu, /* clicking nav bar slides nav bar right */
+	.container-menu:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav bar keeps nav out of the way and allows :hover to triggers */
+		left: 									0; /* move on screen */
+	}
+
+	/* nav contact */
+	
+	.navigation-contact:hover ~ .container-content, /* clicking on menu nav slides container-content left */
+	.container-contact:hover ~ .container-content { /* hovering over container-menu keeps container-content left */
+		width: 									100%;
+		left: 									-70%;
+	}
+	
+	.navigation-contact:hover ~ .container-contact, /* clicking contact nav slides container conteact left */
+	.container-contact:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav item keeps nav out of the way and allows :hover to trigger */
+		left: 									30%; /* move on screen */
+		width:									70%;		
+	}
+	
+	.navigation-contact:hover ~ .container-menu, /* keep menu off screen to the left */
+	.container-contact:hover ~ .container-menu {
+		left: 									-70%;
+	}
+	
+	/* navigation bar */
+	
+	.navigation-contact:hover ~ .navigation-bar, /* mousedown on contact nav clears navigation bar background */
+	.container-contact:hover ~ .navigation-bar { /* hover on contact nav clears navigation bar background */
+		top: 0;
+	}
+
+}

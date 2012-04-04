@@ -1,0 +1,71 @@
+@media screen and (max-width: 1000px) {
+
+	.container-contact:hover ~ .container-menu { /* mouseover on container contact keeps container menu off screen */
+		left: 									-60%;
+	}
+
+	.navigation-contact:hover ~ .container-menu { /* hover on contact nav moves container menu off screen to the left */
+		left: 									-60%; 
+	}
+ 
+
+	.navigation-contact:hover ~ .container-content, /* hovering over nav bar slides container-content left */
+	.container-contact:hover ~ .container-content { /* hovering over container-menu keeps container-content left */
+		left: 									-30%;
+	}
+
+	.navigation-contact:hover ~ .container-contact, /* hovering over nav bar slides nav bar left */
+	.container-contact:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav bar keeps nav out of the way and allows :hover to triggers */
+		width:									60%;
+		left: 									40%; /* move on screen */
+		display:								block;
+	}
+	
+	/* container inner */
+	.container-contact .container-inner {
+		display: none;
+	}
+	
+	.navigation-contact:hover ~ .container-contact .container-inner,
+	.container-contact:hover .container-inner {
+		display: block;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+	
+	
+	/*	nav menu */
+	
+	.navigation-menu:hover ~ .container-content, /* hovering over nav bar slides container-content right */
+	.container-menu:hover ~ .container-content { /* hovering over container-menu keeps container-content right */
+		width: 									100%;
+		left: 									70%;
+	}
+	
+	.navigation-menu:hover ~ .container-menu, /* hovering over nav bar slides nav bar right */
+	.container-menu:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav bar keeps nav out of the way and allows :hover to triggers */
+		left: 									0; /* move on screen */
+	}
+
+	/* nav contact */
+
+	.navigation-contact:hover ~ .container-content, /* hovering over menu nav slides container-content left */
+	.container-contact:hover ~ .container-content { /* hovering over container-menu keeps container-content left */
+		width: 									100%;
+		left: 									-70%;
+	}
+	
+	.navigation-contact:hover ~ .container-contact, /* hovering over contact nav slides container conteact left */
+	.container-contact:hover { /* hovering over container nav maintains its position; IMPORTANT: the lower z-index on the nav item keeps nav out of the way and allows :hover to trigger */
+		left: 									30%; /* move on screen */
+		width:									70%;		
+	}
+	
+	.navigation-contact:hover ~ .container-menu, /* keep menu off screen to the left */
+	.container-contact:hover ~ .container-menu {
+		left: 									-70%;
+	}
+
+}

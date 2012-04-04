@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Off Canvas Hybrid | A Responsive Web Design Pattern</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content = "user-scalable=no, width=device-width, initial-scale=1.0; maximum-scale=1.0;" />
+		<meta name="keywords" content="Responsive, Web, Design, Mobile, CSS, JavaScript" >
+		<meta name="description" content="Off Canvas Hybrid is a responsive web design pattern for both desktop and mobile devices." >
+		
+		<link rel="stylesheet" type="text/css" href="css/desktop.css" />
+		<link rel="stylesheet" type="text/css" href="css/touch.css" />
+		<link rel="stylesheet" type="text/css" href="css/type.css" />
+		<link rel="stylesheet" type="text/css" href="css/color.css" />
+
+		<!--[if IE 6]>
+			<link rel="stylesheet" type="text/css" href="css/ie6.css">
+		<![endif]-->	
+		<!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="css/ie7.css">
+		<![endif]-->	
+		<!--[if IE 8]>
+			<link rel="stylesheet" type="text/css" href="css/ie8.css">
+		<![endif]-->
+		<!--[if IE 9]>
+			<link rel="stylesheet" type="text/css" href="css/ie9.css">
+		<![endif]-->
+			
+		<!-- <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> -->
+		
+		<script type="text/javascript" src="js/respond.min.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/pvector.js"></script>	
+		<script type="text/javascript" src="js/app.js"></script>
+		
+
+	</head>
+	<body onorientationchange="OffCanvas.Utils.updateOrientation();">
+		
+		<!-- for IE7 compatibility; cannot have comments in between siblings -->
+		
+		<!-- IMPORTANT: in the DOM, .container-contact must appear before .container-menu bc :hover will control container-menu using sibling selector ie. ".container-contact:hover ~ .container-menu" -->
+		
+		<a name="top"></a>		
+		<div class="container-page">
+						
+			<a class="navigation navigation-contact">
+				contact
+			</a>
+			
+			<a class="navigation navigation-menu">
+				menu
+			</a>			
+			
+			<div id="ContainerContact" class="container container-contact">
+							
+				<div class="container-inner">
+					<h2>Contact</h2>
+					<p><a href="mailto:my@emailaddress.com" id="contact_email_link">my@emailaddress.com</a></p>
+				</div>
+			</div>
+			
+			<div class="navigation-bar">
+				<table>
+					<tr>
+						<td class="navigation-bar-left">
+							<div class="navbg-menu">
+								&nbsp;
+							</div>
+						</td>
+						<td class="navigation-bar-middle">&nbsp;</td>
+						<td class="navigation-bar-right">
+							<div class="navbg-contact">
+								&nbsp;
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div id="ContainerMenu" class="container container-menu">
+				
+				<div class="container-inner">
+					<nav>
+						<ul class="menu">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="page1.html" class="selected">Page 1</a></li>
+							<li><a href="page2.html">Page 2</a></li>
+							<li><a href="page3.html">Page 3</a></li>
+						</ul>
+					</nav>				
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			
+			<div id="ContainerContent" class="container container-content">
+				<div class="container-inner">
+									
+					<h1 class="title">Off Canvas Hybrid</h1>
+					<h2>Page 1</h2>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+					
+					<ol>
+					   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+					   <li>Aliquam tincidunt mauris eu risus.</li>
+					   <li>Vestibulum auctor dapibus neque.</li>
+					</ol>
+					
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+					
+				</div>
+				
+				<div class="container-footer container-inner">
+					<nav>
+						<ul class="menu">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="page1.html" class="selected">Page 1</a></li>
+							<li><a href="page2.html">Page 2</a></li>
+							<li><a href="page3.html">Page 3</a></li>
+						</ul>
+					</nav>					
+				</div>
+				
+			</div>		
+		</div>
+
+		
+	</body>
+</html>
